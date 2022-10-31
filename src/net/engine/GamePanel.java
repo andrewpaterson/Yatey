@@ -10,8 +10,6 @@ import java.awt.event.*;
 import java.util.*;
 import java.util.List;
 
-import sun.awt.image.RemoteOffScreenImage;
-import sun.awt.image.OffScreenImage;
 
 @SuppressWarnings({"ALL"})
 public abstract class GamePanel extends JPanel implements ComponentListener
