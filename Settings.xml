@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO_8859-1" ?>
+<Settings>
+<Version>1.1</Version>
+<ProjectName>/home/r2d2/yatey/etc/Map.xml</ProjectName>
+<ImportDirectory>/home/r2d2/yatey/etc/Hard Vacuum/Textures</ImportDirectory>
+<SaveDirectory>/home/r2d2/yatey/etc</SaveDirectory>
+<gridStyle>Beneath</gridStyle>
+<HoldVisible>true</HoldVisible>
+<AutoloadProject>true</AutoloadProject>
+<MapCelWidth>20</MapCelWidth>
+<MapCelHeight>20</MapCelHeight>
+<MapWidth>20</MapWidth>
+<MapHeight>20</MapHeight>
+<TexturePath>/home/r2d2/yatey/etc/Hard Vacuum/Textures</TexturePath>
+<Numbers>
+<CelWidth>20</CelWidth>
+<CelHeight>20</CelHeight>
+<ColumnCount>-1</ColumnCount>
+<RowCount>-1</RowCount>
+<LeftOffset>0</LeftOffset>
+<TopOffset>1</TopOffset>
+<VerticalSpacing>20</VerticalSpacing>
+<HorizontalSpacing>20</HorizontalSpacing>
+<Transparent>
+</Transparent>
+<LeftToRightFirst>true</LeftToRightFirst>
+<Trim>false</Trim>
+</Numbers>
+<KeyBindings>
+<KeyBinding>
+<Action>Map Editor</Action>
+<Key>F1</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Brush Selector</Action>
+<Key>Space</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Import Brush</Action>
+<Key>F2</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Import Palette</Action>
+<Key>F3</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Import Integers</Action>
+<Key>F4</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Next Layer</Action>
+<Key>2</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Previous Layer</Action>
+<Key>1</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Next Map</Action>
+<Key>4</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Previous Map</Action>
+<Key>3</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Cycle Grid</Action>
+<Key>G</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Undo</Action>
+<Key>Ctrl Z</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Redo</Action>
+<Key>Ctrl+Shift Z</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Layer Visibility</Action>
+<Key>Back Quote</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Add Layer</Action>
+<Key>Ctrl Equals</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Remove Layer</Action>
+<Key>Ctrl Minus</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Move Layer Up</Action>
+<Key>Ctrl Open Bracket</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Move Layer Down</Action>
+<Key>Ctrl Close Bracket</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Load</Action>
+<Key>Ctrl L</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Save</Action>
+<Key>Ctrl S</Key>
+</KeyBinding>
+<KeyBinding>
+<Action>Default Brush</Action>
+<Key>E</Key>
+</KeyBinding>
+</KeyBindings>
+</Settings>

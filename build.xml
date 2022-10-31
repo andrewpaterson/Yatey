@@ -1,0 +1,38 @@
+<project name="yatey" default="run">
+
+  <property environment="env"/>
+  <property name="classes" value="classes"/>
+  <property name="source" value="src"/>
+  <property name="etc" value="etc"/>
+  <property name="jarfile" value="yatey.jar"/>
+  <property name="manifest" value="MANIFEST.MF"/>
+
+  <target name="init" depends="clean">
+    <mkdir dir="${classes}"/>
+  </target>
+
+  <target name="run" depends="jar">
+    <java fork="true" jar="${jarfile}"/>
+  </target>
+
+   <target name="compile" depends="init">
+    <javac srcdir="${source}" destdir="${classes}" debug="on" fork="true"
+           memorymaximumsize="512M">
+      <classpath>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="clean">
+    <delete dir="${classes}"/>
+    <delete file="${jarfile}"/>
+    <delete file="${manifest}"/>
+  </target>
+
+  <target name="jar" depends="compile">
+    <manifest file="${manifest}">
+      <attribute name="Main-Class" value="net.tileeditor.general.TileEditor"/>
+    </manifest>
+    <jar jarfile="${jarfile}" basedir="${classes}" manifest="MANIFEST.MF"/>
+  </target>
+</project>

@@ -1,0 +1,36 @@
+--- Bug fixes ---
+Log exceptions
+Relative path names
+Brush source manager
+Load autoback as project
+
+--- Version 1.2 ---
+Brush select simple named
+Tabbed simple brush groups
+View one or two panel columns.
+Toggle layer panel visibility
+Show project name *somewhere*
+
+--- Version 1.3 ---
+Compound Brush editor
+Multiple maps visible
+Map panel in bottom right
+Maps scroll at a fraction of major largest map speed
+Simple Brush sets
+
+--- Version 1.4 ---
+Import CSV as Integers
+Import image as Palette
+Import fixed width text as Characters
+
+--- Version 1.5 ---
+Minimaps as brush type
+Export custom XML
+Export only CSVs
+Write PNG
+Load and evolve old map files
+
+--- Version 2.0 ---
+Arbitrary Sprites
+Animation sequences
+Paths
