@@ -3,24 +3,28 @@ package net.tileeditor.general;
 import net.engine.GameRunnable;
 import net.tileeditor.*;
 import net.tileeditor.brush.CompoundBrush;
+import net.tileeditor.brushimporter.BrushImportPanel;
 import net.tileeditor.integerimporter.IntegerRangeDialog;
-import net.tileeditor.paletteimporter.PaletteImporter;
 import net.tileeditor.layers.TileArray;
 import net.tileeditor.layers.TileMapWrapper;
-import net.tileeditor.brushimporter.BrushImportPanel;
-import net.tileeditor.mapeditor.MapPanel;
 import net.tileeditor.mapeditor.AddLayerDialog;
+import net.tileeditor.mapeditor.MapPanel;
+import net.tileeditor.paletteimporter.PaletteImporter;
 import net.tileeditor.simpleobjectselector.SimpleObjectSelectPanel;
 
 import javax.swing.*;
-import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
 
-public class TileEditor extends JFrame implements WindowListener, ContainerListener, KeyListener, ActionListener
+public class TileEditor
+    extends JFrame
+    implements WindowListener,
+               ContainerListener,
+               KeyListener,
+               ActionListener
 {
   public static final String MAP_PANEL = "MapPanel";
   public static final String CEL_PANEL = "SimpleObjectSelectPanel";
@@ -46,7 +50,7 @@ public class TileEditor extends JFrame implements WindowListener, ContainerListe
   public TileEditor() throws HeadlessException
   {
     super("Yet Another Tile Editor (Yatey)");
-    addKeyAndContainerListenerRecursively(this);
+    ListenerHelper.addKeyAndContainerListenerRecursively(this, this, this);
     addWindowListener(this);
 
     Container contentPane = getContentPane();
@@ -249,45 +253,12 @@ public class TileEditor extends JFrame implements WindowListener, ContainerListe
 
   public void componentAdded(ContainerEvent e)
   {
-    addKeyAndContainerListenerRecursively(e.getChild());
+    ListenerHelper.addKeyAndContainerListenerRecursively(e.getChild(), this, this);
   }
 
   public void componentRemoved(ContainerEvent e)
   {
-    removeKeyAndContainerListenerRecursively(e.getChild());
-  }
-
-  private void addKeyAndContainerListenerRecursively(Component c)
-  {
-    if (!((c instanceof JTextArea) || (c instanceof JTextField)))
-    {
-      c.addKeyListener(this);
-    }
-    if (c instanceof Container)
-    {
-      Container cont = (Container) c;
-      cont.addContainerListener(this);
-      Component[] children = cont.getComponents();
-      for (Component aChildren : children)
-      {
-        addKeyAndContainerListenerRecursively(aChildren);
-      }
-    }
-  }
-
-  private void removeKeyAndContainerListenerRecursively(Component c)
-  {
-    c.removeKeyListener(this);
-    if (c instanceof Container)
-    {
-      Container cont = (Container) c;
-      cont.removeContainerListener(this);
-      Component[] children = cont.getComponents();
-      for (Component aChildren : children)
-      {
-        removeKeyAndContainerListenerRecursively(aChildren);
-      }
-    }
+    ListenerHelper.removeKeyAndContainerListenerRecursively(e.getChild(), this, this);
   }
 
   public void keyTyped(KeyEvent e)
@@ -520,7 +491,6 @@ public class TileEditor extends JFrame implements WindowListener, ContainerListe
     }
   }
 
-
   public void importBatchBrushes()
   {
     final File files[] = FileChooser.showMultiSelectLoad(this, "Import Brushes", Settings.getInstance().getImportDirectory(), "jpg", "gif", "png", "bmp");
@@ -736,7 +706,7 @@ public class TileEditor extends JFrame implements WindowListener, ContainerListe
   private void badLoad(Settings settings, String name)
   {
     System.out.println("Couldn't load map [" + name + "]");
-    
+
     setWarning("Couldn't load map ");
     settings.setLastProjectName(null);
     settings.save();

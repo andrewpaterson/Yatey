@@ -6,6 +6,7 @@ import net.tileeditor.general.SimpleObjectViewPanel;
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class BrushImportViewPanel extends SimpleObjectViewPanel
@@ -29,7 +30,7 @@ public class BrushImportViewPanel extends SimpleObjectViewPanel
       {
         int x = e.getX();
         int y = e.getY();
-        int rgb = backBufferImage.getRGB(x, y);
+        int rgb = ((BufferedImage)(backBufferImage)).getRGB(x, y);
         editorPanelInfo.setEmptyColor(rgb);
       }
       else
@@ -87,7 +88,7 @@ public class BrushImportViewPanel extends SimpleObjectViewPanel
     {
       int x = e.getX();
       int y = e.getY();
-      rgb = backBufferImage.getRGB(x, y);
+      rgb = ((BufferedImage)(backBufferImage)).getRGB(x, y);
     }
   }
 

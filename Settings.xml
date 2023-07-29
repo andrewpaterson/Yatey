@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO_8859-1" ?>
 <Settings>
 <Version>1.1</Version>
-<ProjectName>/home/r2d2/yatey/etc/Map.xml</ProjectName>
+<ProjectName/>
 <ImportDirectory>/home/r2d2/yatey/etc/Hard Vacuum/Textures</ImportDirectory>
 <SaveDirectory>/home/r2d2/yatey/etc</SaveDirectory>
 <gridStyle>Beneath</gridStyle>

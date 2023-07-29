@@ -1,6 +1,5 @@
 package net.engine;
 
-import static net.engine.GameRunnable.NANOS_IN_MILLI;
 import net.engine.graphics.Sprite;
 import net.engine.shape.Shape;
 
@@ -8,11 +7,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-import java.util.List;
 
+import static net.engine.GameRunnable.NANOS_IN_MILLI;
 
-@SuppressWarnings({"ALL"})
-public abstract class GamePanel extends JPanel implements ComponentListener
+public abstract class GamePanel
+    extends JPanel
+    implements ComponentListener
 {
   public int screenWidth;
   private GameRunnable runnable;
@@ -20,7 +20,7 @@ public abstract class GamePanel extends JPanel implements ComponentListener
 
   private volatile boolean running = false;
 
-  protected OffScreenImage backBufferImage;
+  protected Image backBufferImage;
   protected Graphics2D backBuffer;
   protected Graphics2D abusedBuffer;
 
@@ -74,7 +74,7 @@ public abstract class GamePanel extends JPanel implements ComponentListener
     screenHeight = getHeight();
     if ((screenWidth > 0) && (screenHeight > 0))
     {
-      backBufferImage = (OffScreenImage) createImage(screenWidth, screenHeight);
+      backBufferImage = createImage(screenWidth, screenHeight);
       if (backBufferImage != null)
       {
         backBuffer = (Graphics2D) backBufferImage.getGraphics();
